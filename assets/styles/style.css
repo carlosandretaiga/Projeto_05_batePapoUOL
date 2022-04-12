@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Roboto", sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+  }
+
+  .container {
+    margin: 0 auto; 
+    padding-top: 80px; 
+    background-color:#E5E5E5;
+    width: 375px; 
+    height: 1030px;
+}
+
+.menu {
+    width: 375px;
+    padding: 25px;
+    height: 80px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /*fixed menu*/
+    top: 0;
+    position: fixed; 
+    z-index: 1;
+}
+
+ion-icon {
+    width: 42.19px;
+    height: 30.94px;
+
+}
+
+.box-message {
+    margin: 0 auto; 
+    padding-top: 80px; 
+    background-color: red;
+    width: 375px; 
+    height: 1030px;
+
+}
+
+.box-send-message {
+    width: 375px;
+    height: 80px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+    padding-top: 10px;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+}
+
+.box-send-message input {
+    font-family: 'Roboto';
+    background-color: #FFFFFF;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+
+    background: #FFFFFF;;
+    border: 0px solid #FFFFFF;;
+    border-radius: 3px;
+    text-align: left;
+
+}
