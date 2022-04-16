@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+
+
 * {
     box-sizing: border-box;
   }
@@ -19,6 +22,78 @@
     width: 375px; 
     height: 1030px;
 }
+
+/* -- Start Tela inicial -- */
+
+.container-initial {
+    margin: 0 auto; 
+    padding-top: 80px; 
+    background-color:#FFFFFF;
+    width: 375px; 
+    height: 1030px;
+}
+
+.container-initial input {
+  margin: 0 auto; 
+  width: 261px;
+  height: 54px;
+  margin-top: 108px;
+  background-color: #FFFFFF;
+  border: 1px solid #d7d7d7;
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #AEAEAE;
+
+}
+
+.container-initial button {
+  width: 109px;
+  height: 45px;
+  background-color: #E7E7E7;
+  border-radius: 9px; 
+  margin: 0 auto; 
+  margin-top: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-message {
+  margin: 0 auto; 
+  width: 261px;
+  height: 54px;
+  margin-top: 108px;
+  background-color: #FFFFFF;
+  border: 1px solid #d7d7d7;
+  box-sizing: border-box;
+  border-radius: 50px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #921212;
+
+}
+
+
+
+
+/* -- End Tela inicial -- */
+
 
 .menu {
     width: 375px;
@@ -42,14 +117,110 @@ ion-icon {
 
 }
 
+/* Tela inicial */ 
+
+.initial-logo {
+  margin: 0 auto; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.initial-logo img {
+  width: 130px;
+  height: 92px;
+}
+
+
+
+
+
 .box-message {
     margin: 0 auto; 
     padding-top: 80px; 
-    background-color: red;
+    background-color: #E5E5E5;
     width: 375px; 
     height: 1030px;
 
 }
+
+.status-messages {
+  width: 375px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #DCDCDC;
+  border-radius: 2px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.status-messages-hour {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+
+  color: #AAAAAA;
+
+}
+
+.status-messages-name {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.status-messages-message {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* - Mensagens reservadas - */
+.reserved-messages {
+  width: 375px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #FFDEDE;
+  border-radius: 2px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+/* Mensagens normais */
+.normal-messages {
+  width: 375px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #FFFFFF;;
+  border-radius: 2px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+
+
+
+
+
+/* box para envio de mensagem */
 
 .box-send-message {
     width: 375px;
@@ -82,4 +253,8 @@ ion-icon {
     border-radius: 3px;
     text-align: left;
 
+}
+
+.hide {
+  display: none;
 }

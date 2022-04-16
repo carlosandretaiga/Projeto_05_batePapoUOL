@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +10,33 @@
 
     <title>Projeto_05_batePapoUOL</title>
 </head>
+
 <body>
 
-    <div class="container">
+    <div class="container-initial">
+
+          <!--Tela inicial - Bônus-->
+        <div class="initial-logo">
+            <img src="/images/logo-uol.svg" alt="">
+        </div>
+
+        <input type="text" class="name-user" placeholder="Digite seu nome">
+
+        <button class="entrar" onclick="enterChat()">
+            Entrar
+        </button>
+
+       <div class="error-message hide">
+
+       </div>
+
+
+
+
+
+    </div>
+
+    <div class="container hide">
 
         <!--Start menu-->
         <div class="menu">
@@ -20,18 +45,67 @@
         </div>
         <!--End menu-->
 
+
         <div class="box-message">
-            
+
+            <div class="status-messages">
+
+                <div class="status-messages-hour">
+                    (09:21:45)
+                </div>
+
+                <div class="status-messages-name">
+                    João
+                </div>
+
+                <div class="status-messages-message">
+                    entra na sala
+                </div>
+
+            </div>
+
+
+            <div class="reserved-messages">
+
+                <div class="status-messages-hour">
+                    (09:21:45)
+                </div>
+
+                <div class="status-messages-name">
+                    João
+                </div>
+
+                <div class="status-messages-message">
+                    entra na sala
+                </div>
+
+            </div>
+
+            <div class="normal-messages">
+
+                <div class="status-messages-hour">
+                    (09:21:45)
+                </div>
+
+                <div class="status-messages-name">
+                    João
+                </div>
+
+                <div class="status-messages-message">
+                    entra na sala
+                </div>
+
+            </div>
+
+
         </div>
-
-
-
-
 
         <!--Start box-send-message-->
         <div class="box-send-message">
 
             <input type="text" placeholder="Escreva aqui">
+
+            <!--Aqui é um button-->
 
             <ion-icon name="paper-plane-outline"></ion-icon>
 
@@ -41,7 +115,14 @@
     </div>
 
     <!--Scripts-->
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <!--<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>-->
+
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/assets/scripts/scripts.js"></script>
 </body>
+
 </html>
