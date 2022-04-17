@@ -15,7 +15,7 @@
 
     <div class="container-initial">
 
-          <!--Tela inicial - Bônus-->
+        <!--Tela inicial - Bônus-->
         <div class="initial-logo">
             <img src="/images/logo-uol.svg" alt="">
         </div>
@@ -26,9 +26,9 @@
             Entrar
         </button>
 
-       <div class="error-message hide">
+        <div class="error-message hide">
 
-       </div>
+        </div>
 
 
 
@@ -48,23 +48,9 @@
 
         <div class="box-message">
 
-            <div class="status-messages">
+            
 
-                <div class="status-messages-hour">
-                    (09:21:45)
-                </div>
-
-                <div class="status-messages-name">
-                    João
-                </div>
-
-                <div class="status-messages-message">
-                    entra na sala
-                </div>
-
-            </div>
-
-
+<!-- 
             <div class="reserved-messages">
 
                 <div class="status-messages-hour">
@@ -96,18 +82,20 @@
                 </div>
 
             </div>
-
+-->
 
         </div>
 
         <!--Start box-send-message-->
         <div class="box-send-message">
 
-            <input type="text" placeholder="Escreva aqui">
+            <input type="text" class="send-message" placeholder="Escreva aqui">
 
             <!--Aqui é um button-->
 
-            <ion-icon name="paper-plane-outline"></ion-icon>
+            <button class="send" onclick="sendMessage()">
+                <ion-icon name="paper-plane-outline"></ion-icon>
+            </button>
 
         </div>
         <!--End box-send-message-->
