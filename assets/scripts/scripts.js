@@ -3,6 +3,7 @@ let nameUser;
 
 
 
+
 //Processar error entrar na sala 
 function errorProcess(error) {
     //console.log(error.response); 
@@ -119,7 +120,6 @@ function loadMessages(response) {
     //aqui colocar função para renderizar mensagens
     renderMessages();
 
-
 }
 
 setInterval(getMessages, 3000);
@@ -164,12 +164,12 @@ function renderMessages() {
                 ${messageChat[i].from}
                 </div>
 
-                <div class="messages-to-to> 
+                <div class="messages-to-to"> 
                  ${toMessages}
                 </div> 
 
                 <div class="messages-to">
-                ${messageChat[i].to}
+                <strong>${messageChat[i].to}</strong>:
                 </div>
 
                 <div class="messages-message">
@@ -188,10 +188,10 @@ function renderMessages() {
                 </div>
 
                 <div class="messages-name">
-                ${messageChat[i].from}:
+                ${messageChat[i].from} 
                 </div>
 
-                <div class="messages-to-to> 
+                <div class="messages-to-to-reserved"> 
                 reservadamente para 
                 </div> 
 
@@ -208,18 +208,27 @@ function renderMessages() {
         `;
         }
     }
+    
 }
+
+// updateScroll(); 
+// function updateScroll() {
+//     const element = document.querySelector(".container");
+//     element.scrollTop = element.scrollHeight;
+// }
+
 
 
 
 //setInterval(renderMessages, 3000); 
 
-function tratarSucessoSend (sucess) {
-    if (sucess.response.status === 200) {
-        const retirarMensagem = document.querySelector(".send-message").value;
-        retirarMensagem.value = " ";
-    }
+function tratarSucessoSend () {
+        document.querySelector(".send-message").value = " ";
+        
+    
 }
+
+//setTimeout(tratarSucessoSend, 3000); 
 
 
 //Enviando mensagem para todos 
@@ -249,14 +258,17 @@ function sendMessage() {
 
 }
 
-function pressEnter() { 
-    let inputfield = document.getElementById("inputField");
-     console.log(document.getElementById("inputField"));
-     inputfield.addEventListener("keyup", function (event) { 
-         if (event.key === "Enter") {
-         document.getElementById("btnEnvia").click();
-         }}) 
+// function pressEnter() { 
+//     let inputfield = document.getElementById(".send-message");
+//      console.log(document.getElementById(".send-message"));
+//      inputfield.addEventListener("keyup", function (event) { 
+//          if (event.key === "Enter") {
+//          document.getElementById(".send").click();
+//          }}) 
  
-     }
+//      }
     
+// pressEnter(); 
+
+
 

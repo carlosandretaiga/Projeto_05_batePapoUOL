@@ -173,8 +173,8 @@ ion-icon {
 }
 
 .messages-name {
-  margin-left: 10px;
-  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: bold;
@@ -182,6 +182,13 @@ ion-icon {
 }
 
 .messages-to-to {
+  margin-left: 10px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-size: 14px;
+}
+
+.messages-to-to-reserved {
   margin-left: 10px;
   font-family: 'Roboto';
   font-style: normal;
@@ -196,12 +203,24 @@ ion-icon {
   font-size: 14px;
 }
 
+.messages-to strong {
+  font-weight: bold;
+}
+
 .messages-message {
   margin-left: 10px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
+  text-overflow: clip ellipsis; 
+  display: flex;
+  justify-content: column;
+  word-wrap: break-word; 
+  overflow:hidden;
+
+  white-space: nowrap;
+  /*text-overflow: ellipsis;*/
 }
 
 /* - Mensagens reservadas - */
