@@ -3,7 +3,6 @@ let nameUser;
 
 
 
-
 //Processar error entrar na sala 
 function errorProcess(error) {
     //console.log(error.response); 
@@ -17,16 +16,9 @@ function errorProcess(error) {
         document.querySelector(".error-message").innerHTML = `Este usuário já existe, por favor escolha outro nome!`;
          
     }
-
-    // //Aqui mudo de tela se for sucesso a requisição
-    // const containerInitial = document.querySelector(".container-initial");
-    // containerInitial.classList.add("hide");
-
-    // const container = document.querySelector(".container");
-    // container.classList.remove("hide");
 }
 
-function tratarSucessoChat () {
+function treatSuccessChat () {
     //Aqui mudo de tela se for sucesso a requisição
     const containerInitial = document.querySelector(".container-initial");
     containerInitial.classList.add("hide");
@@ -51,7 +43,7 @@ function enterChat() {
     );
 
     //Executar quando a requisição for resolvida com sucesso
-    promise.then(tratarSucessoChat);
+    promise.then(treatSuccessChat);
     //keepConnection
 
 
@@ -59,7 +51,7 @@ function enterChat() {
     promise.catch(errorProcess);
 }
 
-//enterChat(); 
+
 
 
 //Manter conexão 
@@ -117,7 +109,6 @@ function getMessages() {
 //Função de carregar dados de mensagens que já estão na API
 function loadMessages(response) {
     messageChat = response.data;
-    //aqui colocar função para renderizar mensagens
     renderMessages();
 
 }
@@ -131,7 +122,6 @@ function renderMessages() {
     listMessages.innerHTML = "";
 
     for (let i = 0; i < messageChat.length; i++) {
-
 
         if(messageChat[i].type === "status") {
             listMessages.innerHTML += `
@@ -218,14 +208,11 @@ function renderMessages() {
 // }
 
 
-
-
 //setInterval(renderMessages, 3000); 
 
 function tratarSucessoSend () {
         document.querySelector(".send-message").value = " ";
-        
-    
+          
 }
 
 //setTimeout(tratarSucessoSend, 3000); 
@@ -254,7 +241,6 @@ function sendMessage() {
     //Executar quando a requisição for resolvida com falha
     promise.catch(errorProcess);
    
-
 
 }
 
