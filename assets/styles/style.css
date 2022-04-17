@@ -159,6 +159,7 @@ ion-icon {
 }
 
 .status-messages-hour {
+  margin-left: 10px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -172,6 +173,7 @@ ion-icon {
 }
 
 .status-messages-name {
+  margin-left: 10px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: bold;
@@ -179,6 +181,7 @@ ion-icon {
 }
 
 .status-messages-to {
+  margin-left: 10px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: bold;
@@ -186,6 +189,7 @@ ion-icon {
 }
 
 .status-messages-message {
+  margin-left: 10px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
