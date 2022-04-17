@@ -158,7 +158,7 @@ ion-icon {
 
 }
 
-.status-messages-hour {
+.messages-hour {
   margin-left: 10px;
   font-family: 'Roboto';
   font-style: normal;
@@ -172,7 +172,23 @@ ion-icon {
 
 }
 
-.status-messages-name {
+.messages-name {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.messages-to-to {
+  margin-left: 10px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-size: 14px;
+}
+
+.messages-to {
   margin-left: 10px;
   font-family: 'Roboto';
   font-style: normal;
@@ -180,15 +196,7 @@ ion-icon {
   font-size: 14px;
 }
 
-.status-messages-to {
-  margin-left: 10px;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.status-messages-message {
+.messages-message {
   margin-left: 10px;
   font-family: 'Roboto';
   font-style: normal;

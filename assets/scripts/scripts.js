@@ -3,6 +3,38 @@ let nameUser;
 
 
 
+//Processar error entrar na sala 
+function errorProcess(error) {
+    //console.log(error.response); 
+
+    if (error.response.status === 400) {
+        window.location.reload();
+        
+        const errorMessage = document.querySelector(".error-message");
+        errorMessage.classList.remove("hide")
+
+        document.querySelector(".error-message").innerHTML = `Este usuário já existe, por favor escolha outro nome!`;
+         
+    }
+
+    // //Aqui mudo de tela se for sucesso a requisição
+    // const containerInitial = document.querySelector(".container-initial");
+    // containerInitial.classList.add("hide");
+
+    // const container = document.querySelector(".container");
+    // container.classList.remove("hide");
+}
+
+function tratarSucessoChat () {
+    //Aqui mudo de tela se for sucesso a requisição
+    const containerInitial = document.querySelector(".container-initial");
+    containerInitial.classList.add("hide");
+
+    const container = document.querySelector(".container");
+    container.classList.remove("hide");
+    keepConnection(); 
+}
+
 //função modelo para liberar página de mensagens
 function enterChat() {
     nameUser = document.querySelector(".name-user").value; //ver essa parte
@@ -18,7 +50,8 @@ function enterChat() {
     );
 
     //Executar quando a requisição for resolvida com sucesso
-    promise.then(keepConnection);
+    promise.then(tratarSucessoChat);
+    //keepConnection
 
 
     //Executar quando a requisição for resolvida com falha
@@ -58,6 +91,14 @@ setInterval(keepConnection, 3000);
 
 // }
 
+autoScroll();
+//função para rolagem automática 
+function autoScroll() {
+    const elementBoxMessage = document.querySelector(".box-message");
+    elementBoxMessage.scrollIntoView();
+}
+
+
 
 getMessages();
 
@@ -85,63 +126,100 @@ setInterval(getMessages, 3000);
 
 //Aqui criar função para renderizar mensagens
 function renderMessages() {
+    const toMessages = " para "; 
     const listMessages = document.querySelector(".box-message");
     listMessages.innerHTML = "";
 
     for (let i = 0; i < messageChat.length; i++) {
-        listMessages.innerHTML += `
+
+
+        if(messageChat[i].type === "status") {
+            listMessages.innerHTML += `
         <div class="status-messages">
 
-                <div class="status-messages-hour">
+                <div class="messages-hour">
                     (${messageChat[i].time})
                 </div>
 
-                <div class="status-messages-name">
+                <div class="messages-name">
                 ${messageChat[i].from}
                 </div>
 
-                <div class="status-messages-to">
-                ${messageChat[i].to}
-                </div>
-
-                <div class="status-messages-message">
+                <div class="messages-message">
                 ${messageChat[i].text}
                 </div>
 
         </div>
         
         `;
+        } else if(messageChat[i].type === "message") {
+            listMessages.innerHTML += `
+        <div class="normal-messages">
+
+                <div class="messages-hour">
+                    (${messageChat[i].time})
+                </div>
+
+                <div class="messages-name">
+                ${messageChat[i].from}
+                </div>
+
+                <div class="messages-to-to> 
+                 ${toMessages}
+                </div> 
+
+                <div class="messages-to">
+                ${messageChat[i].to}
+                </div>
+
+                <div class="messages-message">
+                ${messageChat[i].text}
+                </div>
+
+        </div>
+        
+        `;
+        } else if(messageChat[i].type === "private_message") {
+            listMessages.innerHTML += `
+        <div class="reserved-messages">
+
+                <div class="messages-hour">
+                    (${messageChat[i].time})
+                </div>
+
+                <div class="messages-name">
+                ${messageChat[i].from}:
+                </div>
+
+                <div class="messages-to-to> 
+                reservadamente para 
+                </div> 
+
+                <div class="messages-to">
+                ${messageChat[i].to}:
+                </div>
+
+                <div class="messages-message">
+                ${messageChat[i].text}
+                </div>
+
+        </div>
+        
+        `;
+        }
     }
 }
 
-//se type === "status" => deverá escolher um layout .status-messages
-//se type === "message" => deverá escolher um layout .normal-messages
-//se type === "private_message" => deverá escolher layout .reserved-messages
 
 
 //setInterval(renderMessages, 3000); 
 
-
-
-//Processar error entrar na sala 
-function errorProcess(error) {
-    //console.log(error.response); 
-
-    if (error.response.status === 400) {
-        const errorMessage = document.querySelector(".error-message");
-        errorMessage.classList.remove("hide")
-
-        document.querySelector(".error-message").innerHTML = `Este usuário já existe, por favor escolha outro nome!`
+function tratarSucessoSend (sucess) {
+    if (sucess.response.status === 200) {
+        const retirarMensagem = document.querySelector(".send-message").value;
+        retirarMensagem.value = " ";
     }
-
-    //Aqui mudo de tela se for sucesso a requisição
-    const containerInitial = document.querySelector(".container-initial");
-    containerInitial.classList.add("hide");
-
-    const container = document.querySelector(".container");
-    container.classList.remove("hide");
 }
-
 
 
 //Enviando mensagem para todos 
@@ -161,32 +239,24 @@ function sendMessage() {
     );
 
     //Executar quando a requisição for resolvida com sucesso
-    promise.then();
+    promise.then(tratarSucessoSend);
     //getMessages
 
     //Executar quando a requisição for resolvida com falha
-    //promise.catch(tratarFalhaEnviar);
+    promise.catch(errorProcess);
+   
 
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-//função para rolagem automática 
-function autoScroll() {
-    const elementBoxMessage = document.querySelector(".box-message");
-    elementBoxMessage.scrollIntoView();
-}
-
-autoScroll();
+function pressEnter() { 
+    let inputfield = document.getElementById("inputField");
+     console.log(document.getElementById("inputField"));
+     inputfield.addEventListener("keyup", function (event) { 
+         if (event.key === "Enter") {
+         document.getElementById("btnEnvia").click();
+         }}) 
+ 
+     }
+    
 
