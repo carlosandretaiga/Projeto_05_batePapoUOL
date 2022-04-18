@@ -212,6 +212,7 @@ function renderMessages() {
 
 function tratarSucessoSend () {
         document.querySelector(".send-message").value = " ";
+        //document.querySelector('.send-message')[0].placeholder = 'Escreva aqui';
           
 }
 

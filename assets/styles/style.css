@@ -227,7 +227,7 @@ ion-icon {
 /* - Mensagens reservadas - */
 .reserved-messages {
   width: 375px;
-  height: 40px;
+  /*height: 40px;*/
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px;
@@ -242,7 +242,7 @@ ion-icon {
 /* Mensagens normais */
 .normal-messages {
   width: 375px;
-   /*height: 40px;*/
+  /*height: 40px;*/
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px;
