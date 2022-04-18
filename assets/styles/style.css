@@ -133,8 +133,6 @@ ion-icon {
 
 
 
-
-
 .box-message {
     margin: 0 auto; 
     padding-top: 80px; 
@@ -146,7 +144,7 @@ ion-icon {
 
 .status-messages {
   width: 375px;
-  height: 40px;
+  /*height: 40px;*/
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px;
@@ -173,8 +171,8 @@ ion-icon {
 }
 
 .messages-name {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 7px;
+  padding-right: 7px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: bold;
@@ -213,6 +211,8 @@ ion-icon {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
+  width: 100px;
+  /*text-overflow: ellipsis;
   text-overflow: clip ellipsis; 
   display: flex;
   justify-content: column;
@@ -220,7 +220,8 @@ ion-icon {
   overflow:hidden;
 
   white-space: nowrap;
-  /*text-overflow: ellipsis;*/
+  
+  */
 }
 
 /* - Mensagens reservadas - */
@@ -241,7 +242,7 @@ ion-icon {
 /* Mensagens normais */
 .normal-messages {
   width: 375px;
-  height: 40px;
+   /*height: 40px;*/
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px;
